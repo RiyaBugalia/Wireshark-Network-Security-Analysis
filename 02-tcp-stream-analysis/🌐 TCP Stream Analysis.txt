@@ -1,0 +1,66 @@
+# 🌐 TCP Stream Analysis using Wireshark
+
+This section demonstrates how to analyze **TCP streams** in Wireshark. TCP streams represent end-to-end connections where data is exchanged, such as opening a website or transferring files.
+
+---
+
+## 📖 What is a TCP Stream?
+
+A **TCP stream** is the complete conversation (bi-directional flow) between a client and a server over the **Transmission Control Protocol (TCP)**. Each stream is made up of segments or packets that Wireshark can follow and reassemble into readable content like HTML, FTP commands, or HTTP requests.
+
+---
+
+## ⚙️ How It Was Implemented
+
+1. ✅ Started capture in Wireshark on the active interface (Wi-Fi/Ethernet).
+2. ✅ Opened a website in a browser (e.g., `https://www.wikipedia.org`).
+3. ✅ Stopped the capture after the page loaded.
+4. ✅ Applied the display filter:
+tcp
+5. ✅ Right-clicked on a packet → **Follow** → **TCP Stream**.
+6. ✅ Inspected the stream in ASCII mode to view the data.
+7. ✅ Checked TCP flags (SYN, ACK) and packet info.
+
+---
+
+## 🔍 What to Observe
+
+| Element              | Explanation                                                 |
+|----------------------|-------------------------------------------------------------|
+| `TCP SYN/ACK`        | Flags exchanged during connection setup (3-way handshake)   |
+| `Sequence & ACK`     | Sequence and acknowledgment numbers used in reliable data transfer |
+| `Stream Index`       | A unique number assigned to each TCP conversation           |
+| `Stream Content`     | Application-layer data exchanged (HTML, credentials, etc.)  |
+
+---
+
+## 🖼️ Screenshots (Located in `screenshots/` folder)
+
+| File Name                  | Description                                          |
+|----------------------------|------------------------------------------------------|
+| `tcp_filter_pane.png`      | Display filter applied: `tcp`                       |
+| `tcp_flags_syn_ack.png`    | TCP packet showing SYN and ACK flags                |
+| `tcp_packet_detail.png`    | Expanded view of TCP layer details in a packet      |
+| `tcp_follow_stream.png`    | Dialog showing reassembled TCP stream conversation  |
+| `tcp_stream_content.png`   | Highlighted stream payload between client and server|
+
+---
+
+## 🎥 Video Demonstration
+
+- **File**: `tcp_stream_analysis.mp4`
+- **Demonstrates**:
+- Filtering TCP traffic
+- Following TCP stream
+- Analyzing stream data and headers
+
+---
+
+## 📂 Folder Structure
+
+
+---
+
+## ✅ Conclusion
+
+Using Wireshark to analyze **TCP streams** helps visualize the data exchanged during a TCP connection. It reveals how the application layer (e.g., HTTP) interacts with transport layer (TCP), making it invaluable for network troubleshooting and forensic analysis.
