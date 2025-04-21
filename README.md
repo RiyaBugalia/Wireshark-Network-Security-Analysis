@@ -1,7 +1,6 @@
 # 🛡️ Wireshark-Based Network Security Analysis Project
 
-This project showcases several key network security analysis tasks using **Wireshark** on **Windows 11**. It was completed as part of the **Google Cybersecurity Certification** course:  
-**Connect and Protect: Networks and Network Security**
+This project showcases several key network security analysis tasks using **Wireshark** on **Windows 11**. It was completed as part of the **Google Cybersecurity Course** - **Connect and Protect: Networks and Network Security** (https://www.coursera.org/learn/cloud-security-risks-identify-and-protect-against-threats) 
 
 ---
 
