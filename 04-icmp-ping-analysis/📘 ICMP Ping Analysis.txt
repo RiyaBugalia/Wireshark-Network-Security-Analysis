@@ -1,0 +1,114 @@
+# 📘 ICMP Ping Analysis with Wireshark
+
+## 🧪 Overview
+
+This experiment captures and analyzes ICMP packets using Wireshark to understand the structure and behavior of ping (echo) requests and replies. The analysis demonstrates how ICMP operates in network diagnostics, specifically through the use of the `ping` command to test connectivity with Google's DNS.
+
+---
+
+## 🛠️ Tools Used
+
+- Wireshark (latest version)
+- Command Prompt (Windows 11)
+- Ping Command:
+  ping www.google.com
+- No video recording was performed; only screenshots were used.
+
+---
+
+## 🎯 Objectives
+
+- Observe and filter ICMP Echo Request and Reply packets.
+- Analyze key ICMP packet fields such as Type, Code, Identifier, and Sequence Number.
+- Identify source and destination IP addresses of the packets.
+
+---
+
+## 📂 Folder Structure
+
+icmp-ping-analysis/
+│
+├── screenshots/
+│   ├── icmp_request.png                # ICMP Echo Request packet in Wireshark
+│   ├── icmp_reply.png                  # ICMP Echo Reply packet in Wireshark
+│   ├── icmp_filter_pane.png            # Filter pane with 'icmp' filter applied
+│   ├── icmp_reply_packet_details.png   # Detailed breakdown of ICMP Reply packet
+│   ├── icmp_request_src_dst.png        # Source & Destination IPs for Echo Request
+│
+└── README.md
+
+---
+
+## 🔧 Procedure
+
+1. Start Wireshark and select the active network interface (usually Wi-Fi or Ethernet).
+2. In Command Prompt, type:
+   ping www.google.com
+3. In Wireshark, apply the filter:
+   icmp
+4. Capture packets during the ping.
+5. Analyze the details of the Echo Request (Type 8) and Echo Reply (Type 0) packets.
+
+---
+
+## 📊 Screenshot Descriptions
+
+| Screenshot                       | Description                                                       |
+|----------------------------------|-------------------------------------------------------------------|
+| icmp_request.png                | Captures a sample ICMP Echo Request packet                        |
+| icmp_reply.png                  | Captures the ICMP Echo Reply sent by Google’s DNS                 |
+| icmp_filter_pane.png            | Filter 'icmp' applied to show only ICMP traffic                   |
+| icmp_reply_packet_details.png   | Packet bytes and field-level info for Echo Reply                  |
+| icmp_request_src_dst.png        | Shows Source IP (host) and Destination IP (Google) in request     |
+
+---
+
+## 🧾 Key Packet Details
+
+### ICMP Echo Request:
+- Type: 8 (Echo Request)
+- Code: 0
+- Identifier & Sequence Number: Help track request/response matching
+- Source IP: Local system (e.g., 192.168.x.x)
+- Destination IP: www.google.com (e.g., 142.250.x.x)
+
+### ICMP Echo Reply:
+- Type: 0 (Echo Reply)
+- Code: 0
+- Returns same ID and Sequence Number as request
+
+---
+🎥 Video Demonstration
+File: icmp_ping_demo.mp4
+
+Demonstrates:
+
+Running the ping www.google.com command
+
+Capturing ICMP packets in Wireshark
+
+Filtering using icmp
+
+Inspecting the Echo Request and Reply packets
+
+
+📂 Folder Structure
+Copy code
+04-icmp-ping-analysis/
+├── 📡 ICMP Ping Analysis/
+│   ├── Screenshots/
+│   │   ├── icmp_request.png
+│   │   ├── icmp_reply.png
+│   │   ├── icmp_filter_applied.png
+│   │   ├── icmp_reply_packet_detail.png
+│   │   └── icmp_src_dst.png
+
+
+## ✅ Outcome
+
+- Successfully captured and filtered ICMP traffic related to a ping operation.
+- Verified correct structure of ICMP packets and their role in diagnostics.
+- Identified matching Echo Requests and Replies with correct identifiers.
+
+✅ Conclusion
+ICMP is a fundamental part of IP-based networking, and using Wireshark to analyze ping traffic offers insight into packet flow, host reachability, and network latency. The hands-on ping analysis highlights how Echo Requests and Replies function within real-time communication and diagnostics.

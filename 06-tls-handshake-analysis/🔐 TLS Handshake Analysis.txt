@@ -1,0 +1,78 @@
+# 🔐 TLS Handshake Analysis using Wireshark
+
+This section focuses on capturing and analyzing the **TLS (Transport Layer Security) handshake** using Wireshark. TLS is the cryptographic protocol that secures communication over the internet, particularly for HTTPS traffic.
+
+---
+
+## 📖 What is TLS Handshake?
+
+The **TLS handshake** is the process that establishes a secure connection between a client (like a browser) and a server (like a website). During the handshake:
+
+1. The client sends a `Client Hello` with supported TLS versions and cipher suites.
+2. The server responds with a `Server Hello`, selecting parameters and providing a digital certificate.
+3. Both parties exchange and agree upon session keys.
+4. Change Cipher Spec messages are sent to initiate encrypted communication.
+
+---
+
+## ⚙️ How It Was Implemented
+
+1. ✅ Wireshark capture started on the **Wi-Fi** interface.
+2. ✅ Visited `https://www.wikipedia.org` in a web browser.
+3. ✅ Captured the packets during the TLS handshake process.
+4. ✅ Applied filter: `tls.handshake`
+5. ✅ Inspected individual handshake packets, focusing on:
+   - `Client Hello`
+   - `Server Hello`
+   - `Change Cipher Spec` messages from both client and server
+   - Extra TLS handshake details from the **TLS protocol label** within Wireshark
+
+---
+
+## 🖼️ Screenshots
+
+Stored in the `screenshots/` folder:
+
+| File Name                        | Description                                     |
+|----------------------------------|-------------------------------------------------|
+| `client_hello.png`               | Captured `Client Hello` with TLS versions, ciphers |
+| `server_hello.png`               | `Server Hello` with selected cipher and TLS version |
+| `client_change_cipher_spec.png` | `Client Change Cipher Spec` indicating encryption starts |
+| `server_change_cipher_spec.png` | `Server Change Cipher Spec` completing the transition to encrypted communication |
+| `filter_tls_handshake.png`      | Filter pane with `tls.handshake` applied        |
+
+---
+
+## 🎥 Video Demonstration
+
+- **File**: `tls_handshake_demo.mp4`
+- Covers:
+  - Starting capture
+  - Opening HTTPS website
+  - Applying filter
+  - Inspecting handshake packet sequence
+
+---
+
+## 📂 Folder Structure
+
+06-tls-handshake-analysis/
+├── 🔐 TLS Handshake Analysis/
+│   └── README.md
+├── tls_handshake_demo.mp4
+└── Screenshots/
+    ├── client_hello.png
+    ├── server_hello.png
+    ├── client_change_cipher_spec.png
+    ├── server_change_cipher_spec.png
+    └── filter_tls_handshake.png
+
+
+---
+
+## ✅ Conclusion
+
+Wireshark allows for deep packet inspection of the **TLS handshake**, providing insight into how encrypted sessions are negotiated. This is valuable for troubleshooting certificate issues, understanding TLS version use, and ensuring secure configurations on networks.
+
+
+

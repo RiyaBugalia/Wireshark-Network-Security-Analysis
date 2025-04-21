@@ -1,0 +1,74 @@
+# 🔎 Packet Inspection & Protocol Filtering with Wireshark
+
+This section combines two powerful features of Wireshark: **Deep Packet Inspection (DPI)** and **Protocol Filtering**. These features allow network analysts to capture, filter, and analyze specific protocol traffic and inspect the payload data at a detailed level.
+
+---
+
+## 📁 Overview
+
+| Feature                | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| Protocol Filtering     | Isolate and study traffic by specific protocols (HTTP, DNS, ICMP, FTP, etc.)|
+| Deep Packet Inspection | Inspect actual payload content in readable form, especially for unencrypted data|
+
+---
+
+## ⚙️ How It Was Implemented
+
+1. ✅ Started live capture on the active network interface (Wi-Fi/Ethernet).
+2. ✅ Generated specific protocol traffic (e.g., browsed websites, pinged IPs, FTP login).
+3. ✅ Applied protocol-specific filters such as:
+   - `http` – to view HTTP requests/responses
+   - `dns` – to analyze DNS queries and replies
+   - `icmp` – to monitor ping messages
+   - `ftp` – to capture FTP login and commands
+   - `arp` – to inspect IP-to-MAC resolution traffic
+   - `tls` – to view TLS handshake and encrypted sessions
+4. ✅ Used **Packet Details** and **Packet Bytes** panes to inspect payloads and headers.
+5. ✅ Used `tcp contains "GET"` and other content filters to demonstrate DPI.
+
+---
+
+## 🔍 Use Cases & Observations
+
+| Protocol | Use Case                             | What Was Observed                                           |
+|----------|--------------------------------------|-------------------------------------------------------------|
+| HTTP     | Browsing websites                    | GET and POST requests in plaintext                          |
+| DNS      | Resolving domain names               | Queries and corresponding IP responses                      |
+| ICMP     | Sending ping packets                 | Echo Request and Echo Reply messages                        |
+| ARP      | IP-MAC address resolution            | Who-Has and Is-At messages                                  |
+| FTP      | Logging into FTP                     | USER and PASS commands in plaintext                         |
+| TLS      | Secure HTTPS connections             | TLS handshake initiation and encrypted packets              |
+| TCP      | DPI on payloads                      | Filters like `tcp contains "GET"` showed HTTP commands      |
+
+---
+
+## 🖼️ Screenshots
+
+Screenshots included in the `screenshots/` folder:
+
+| File Name                    | Description                                     |
+|-----------------------------|-------------------------------------------------|
+| `http_filter.png`           | HTTP packet filtered and payload viewed         |
+| `dns_filter.png`            | DNS request and response inspection             |
+| `arp_filter.png`            | ARP request/reply frames                        |
+| `ftp_login_credentials.png` | FTP login credentials (USER, PASS)              |
+| `tls_handshake.png`         | TLS handshake details                           |
+| `packet_bytes_view.png`     | Raw payload view for DPI                        |
+| `filter_bar_view.png`       | Display filter bar with various filters applied |
+
+---
+
+## 🎥 Video Demonstration
+
+- **File**: `packet_inspection_demo.mp4`
+- Demonstrates:
+  - Applying protocol filters (DNS, HTTP, ICMP, etc.)
+  - Using `tcp contains` for DPI
+  - Analyzing packet contents in the details and bytes panes
+
+---
+
+## 📂 Folder Structure
+
+

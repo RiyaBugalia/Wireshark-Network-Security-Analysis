@@ -1,0 +1,105 @@
+# 🌐 DNS Analysis with Wireshark
+
+## 🧪 Overview
+
+This section focuses on capturing and analyzing **DNS (Domain Name System)** packets using Wireshark. DNS is a foundational network protocol that resolves human-readable domain names (like `www.bing.com`) into machine-understandable IP addresses.
+
+---
+
+## 🛠️ Tools Used
+
+- Wireshark (latest version)
+- Windows 11 Command Prompt
+- DNS Query Site: www.bing.com
+- Command: `ping www.bing.com`
+- DNS activity automatically precedes the ICMP ping
+- A video demonstration of DNS filtering is included
+
+---
+
+## 🎯 Objectives
+
+- Capture DNS request and response packets.
+- Filter out only DNS traffic using the Wireshark filter pane.
+- Analyze packet structure, including query and response details.
+- Identify source and destination IPs for DNS packets.
+
+---
+
+## 📂 Folder Structure
+
+dns-analysis/
+│
+├── screenshots/
+│   ├── dns_query_bing_1.png           # DNS request to www.bing.com – overview
+│   ├── dns_query_bing_2.png           # DNS request to www.bing.com – detailed fields
+│   ├── dns_packet_details.png         # DNS response packet expanded
+│   ├── dns_filter_pane.png            # Filter pane with 'dns' filter applied
+│   ├── dns_src_ip.png                 # Source IP of the DNS request
+│   ├── dns_dst_ip.png                 # Destination IP (DNS server)
+│
+├── videos/
+│   └── dns_filter_demo.mp4            # Video showing DNS filtering and packet navigation
+│
+└── README.md
+
+---
+
+## 🔧 Procedure
+
+1. Launched Wireshark and selected the active network interface (Wi-Fi/Ethernet).
+2. Started packet capture.
+3. Opened Command Prompt and executed: `ping www.bing.com`
+4. Observed the DNS query initiated before the ICMP ping.
+5. Applied Wireshark filter:
+dns
+6. Examined the DNS query and response to `www.bing.com`.
+
+---
+
+## 📸 Screenshot Descriptions
+
+| Screenshot              | Description                                                         |
+|-------------------------|---------------------------------------------------------------------|
+| dns_query_bing_1.png    | Overview of DNS request to `www.bing.com`                           |
+| dns_query_bing_2.png    | Expanded fields of the DNS query for `www.bing.com`                 |
+| dns_packet_details.png  | Detailed view of DNS response packet                                |
+| dns_filter_pane.png     | Filter bar showing `dns` filter                                     |
+| dns_src_ip.png          | Source IP address of DNS request (client machine)                   |
+| dns_dst_ip.png          | Destination IP address (DNS server like 8.8.8.8)                    |
+
+---
+
+## 🧾 DNS Packet Details
+
+### DNS Query Packet:
+- **Transaction ID**: Random identifier
+- **Flags**: Standard query
+- **Questions**: 1
+- **Query Name**: `www.bing.com`
+- **Query Type**: A (IPv4 address)
+- **Source IP**: Client (your machine)
+- **Destination IP**: DNS server (like 8.8.8.8)
+
+### DNS Response Packet:
+- **Transaction ID**: Matches the query
+- **Answers**: Contains IP address(es) of `www.bing.com`
+- **TTL**: How long to cache the result
+- **Type**: A (IPv4 address)
+
+---
+
+## 🎥 Video Demonstration
+
+**File:** `dns_filter_demo.mp4`
+
+Covers:
+- Capturing traffic with Wireshark
+- Using the `dns` filter
+- Exploring DNS query and response for `www.bing.com`
+
+---
+
+## ✅ Conclusion
+
+This DNS analysis highlights how a simple command like `ping www.bing.com` initiates background DNS resolution. Using Wireshark, we gain clear insight into the client-server query exchange and IP resolution before any actual data is transmitted.

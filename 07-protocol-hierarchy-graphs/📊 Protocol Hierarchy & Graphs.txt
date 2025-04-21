@@ -1,0 +1,87 @@
+# 📊 Protocol Hierarchy & Graphs in Wireshark
+
+This section demonstrates how Wireshark helps visualize network protocol distribution and traffic trends using the **Protocol Hierarchy** and **I/O Graphs** tools.
+
+---
+
+## 📁 Overview
+
+| Tool                 | Description                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| Protocol Hierarchy   | Displays a tree of all protocols present in the capture and their stats     |
+| I/O Graphs           | Graphical representation of traffic over time (packet rate, size, etc.)     |
+
+---
+
+## ⚙️ How It Was Implemented
+
+1. ✅ Started live capture on the Wi-Fi or Ethernet adapter.
+2. ✅ Visited websites, pinged IPs, and used basic services (DNS, HTTPs, etc.) to generate traffic.
+3. ✅ After stopping the capture:
+   - Went to `Statistics → Protocol Hierarchy`
+   - Went to `Statistics → I/O Graph`
+4. ✅ Customized graph filters and viewed default traffic trends.
+
+---
+
+## 🔍 Protocol Hierarchy Breakdown (Sample)
+
+| Protocol | Layer       | Observations                                                                 |
+|----------|-------------|------------------------------------------------------------------------------|
+| TCP      | Transport   | Counted all TCP connections, including HTTP, HTTPS, and FTP traffic          |
+| UDP      | Transport   | Captured DNS queries, NTP, and other UDP-based services                      |
+| TLS      | Application | Wrapped around TCP, observed in HTTPS connections                           |
+| DNS      | Application | Runs over UDP (and sometimes TCP), resolved domain names during browsing     |
+
+---
+
+## 📈 I/O Graph Observations
+
+| Filter     | Insight                                   |
+|------------|--------------------------------------------|
+| Default    | Overall traffic pattern (all packets)      |
+| `tcp`      | Shows activity during HTTPS/HTTP downloads |
+| `dns`      | Bursts seen during domain name resolutions |
+| `icmp`     | Activity during ping tests                 |
+
+---
+
+## 🖼️ Screenshots
+
+Screenshots included in the `screenshots/` folder:
+
+| File Name                        | Description                                   |
+|----------------------------------|-----------------------------------------------|
+| `protocol_hierarchy_full.png`    | Complete protocol stack usage in capture      |
+| `io_graph_default.png`           | Default traffic over time graph               |
+
+---
+
+## 🎥 Video Demonstration
+
+- **File**: `protocol_hierarchy_graphs_demo.mp4`
+- Shows:
+  - Opening Protocol Hierarchy
+  - Viewing and customizing I/O Graphs
+  - Applying filters to highlight specific protocol traffic
+
+---
+
+## 📂 Folder Structure
+
+07-protocol-hierarchy-graphs/
+├── 📊 Protocol Hierarchy & Graphs/
+│   └── README.md
+├── protocol_hierarchy_graphs_demo.mp4
+└── screenshots/
+    ├── io_graph_default.png
+    ├── protocol_hierarchy_full.png
+    └── statistics.png
+
+
+---
+
+## ✅ Conclusion
+
+Analyzing **Protocol Hierarchy** and **IO Graphs** is useful in understanding what kinds of traffic dominate your network and how they behave over time. It’s especially helpful for detecting anomalies or verifying normal operation during troubleshooting or audits.
+

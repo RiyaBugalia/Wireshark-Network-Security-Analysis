@@ -1,0 +1,85 @@
+# 🌐 Endpoints & Conversations Analysis with Wireshark
+
+This section explores the "Endpoints" and "Conversations" features in Wireshark, which are essential for analyzing network connections, identifying communication pairs, and evaluating data transfer statistics between hosts.
+
+---
+
+## 📁 Overview
+
+| Feature      | Description                                                                 |
+|--------------|-----------------------------------------------------------------------------|
+| Endpoints    | Lists all devices (IP addresses, MAC addresses, etc.) that appeared in captured traffic |
+| Conversations| Displays pairwise communication between two endpoints (e.g., IP-to-IP, MAC-to-MAC)       |
+
+---
+
+## ⚙️ How It Was Implemented
+
+1. ✅ Started a live capture on the active network interface (Wi-Fi/Ethernet).
+2. ✅ Opened websites, used ping commands, and other services to generate traffic.
+3. ✅ Stopped the capture after collecting sufficient packets.
+4. ✅ Went to:
+   - `Statistics` → `Endpoints` to view all communicating devices.
+   - `Statistics` → `Conversations` to view session-level data (IP <-> IP, TCP streams, etc.).
+5. ✅ Explored multiple tabs such as:
+   - **Ethernet**, **IPv4**, **IPv6**, **TCP**, **UDP**, **Wi-Fi**
+6. ✅ Observed:
+   - Total packets and bytes sent/received
+   - Duration of conversations
+   - Active communication pairs
+
+---
+
+## 🔍 Use Cases & Observations
+
+| Analysis Type | Observation |
+|---------------|-------------|
+| Endpoints     | Showed IP addresses of devices that communicated during the session |
+| Conversations | Listed multiple TCP and UDP communication sessions including source/destination IPs and ports |
+| Statistics    | Packet and byte counts were useful for bandwidth usage evaluation |
+
+---
+
+## 🖼️ Screenshots
+
+Screenshots included in the `screenshots/` folder:
+
+| File Name                | Description                                 |
+|-------------------------|---------------------------------------------|
+| `endpoints_ipv4.png`    | List of IPv4 endpoints with stats           |
+| `endpoints_tcp.png`     | List of TCP endpoints                       |
+| `conversations_tcp.png` | List of TCP conversations and session data  |
+| `conversations_udp.png` | List of UDP communication pairs             |
+
+---
+
+## 🎥 Video Demonstration
+
+- **File**: `endpoints_conversations_demo.mp4`
+- Demonstrates:
+  - Opening `Statistics` → `Endpoints`
+  - Opening `Statistics` → `Conversations`
+  - Interpreting communication sessions and traffic stats
+
+---
+
+## 📂 Folder Structure
+
+08-endpoints-conversations/
+├── 🌐 Endpoints & Conversations Analysis/
+│   └── README.md
+├── endpoints_conversations_demo.mp4
+└── screenshots/
+    ├── endpoints_ipv4.png
+    ├── endpoints_tcp.png
+    ├── conversations_tcp.png
+    └── conversations_udp.png
+
+---
+
+## ✅ Conclusion
+
+Endpoints and Conversations statistics are powerful tools for gaining insight into the overall structure and behavior of network traffic. They help identify top communicators, bottlenecks, and abnormal patterns during packet analysis.
+
+
+
